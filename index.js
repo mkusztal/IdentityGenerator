@@ -39,8 +39,8 @@ const people = [];
 const randChoice = (arr) => {
   const randomIndex = Math.floor(Math.random() * arr);
 
-  const item = arr[randomIndex];
-  return item;
+  //const item = arr[randomIndex];
+  return randomIndex;
 };
 
 for (let i = 0; i < 20; i++) {

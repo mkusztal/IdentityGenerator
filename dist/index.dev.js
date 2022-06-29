@@ -9,9 +9,9 @@ var lastNamesArr = ['Kowalski', 'Malinowski', 'Krab', 'Chyba', 'Wagner', 'Klose'
 var people = [];
 
 var randChoice = function randChoice(arr) {
-  var randomIndex = Math.floor(Math.random() * arr);
-  var item = arr[randomIndex];
-  return item;
+  var randomIndex = Math.floor(Math.random() * arr); //const item = arr[randomIndex];
+
+  return randomIndex;
 };
 
 for (var i = 0; i < 20; i++) {
