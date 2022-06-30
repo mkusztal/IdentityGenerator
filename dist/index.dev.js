@@ -9,27 +9,31 @@ var lastNamesArr = ['Kowalski', 'Malinowski', 'Krab', 'Chyba', 'Wagner', 'Klose'
 var people = [];
 
 var randChoice = function randChoice(arr) {
-  var randomIndex = Math.floor(Math.random() * arr); //const item = arr[randomIndex];
+  var randomIndex = arr[Math.floor(Math.random() * arr.length)]; //const item = arr[randomIndex];
 
   return randomIndex;
 };
 
 for (var i = 0; i < 20; i++) {
   var genderChoice = randChoice(genderArr); // nie pojawia się
-  // nie ma prawa pojawić się imię bo go nie przypisałem
+
+  var nameChoice = void 0;
+  var maleNamesChoice = randChoice(maleNamesArr);
+  var femaleNamesChoice = randChoice(femaleNamesArr); // nie ma prawa pojawić się imię bo go nie przypisałem
 
   if (genderChoice === 'male') {
-    var maleNamesChoice = randChoice(maleNamesArr);
+    nameChoice = maleNamesChoice;
   } else if (genderChoice === 'female') {
-    var femaleNamesChoice = randChoice(femaleNamesArr);
+    nameChoice = femaleNamesChoice;
   }
 
-  var randomLastName = Math.floor(Math.random() * lastNamesArr); // null
+  var randomLastName = lastNamesArr[Math.floor(Math.random() * lastNamesArr)]; // null
 
   var randomAge = Math.floor(Math.random() * 78) + 18; // poprawnie
 
   var person = {
     gender: genderChoice,
+    firstName: nameChoice,
     lastName: randomLastName,
     age: randomAge
   };

@@ -37,7 +37,7 @@ const lastNamesArr = [
 
 const people = [];
 const randChoice = (arr) => {
-  const randomIndex = Math.floor(Math.random() * arr);
+  const randomIndex = arr[Math.floor(Math.random() * arr.length)];
 
   //const item = arr[randomIndex];
   return randomIndex;
@@ -46,18 +46,23 @@ const randChoice = (arr) => {
 for (let i = 0; i < 20; i++) {
   const genderChoice = randChoice(genderArr); // nie pojawia się
 
+  let nameChoice;
+  const maleNamesChoice = randChoice(maleNamesArr);
+  const femaleNamesChoice = randChoice(femaleNamesArr);
+
   // nie ma prawa pojawić się imię bo go nie przypisałem
   if (genderChoice === 'male') {
-    const maleNamesChoice = randChoice(maleNamesArr);
+    nameChoice = maleNamesChoice;
   } else if (genderChoice === 'female') {
-    const femaleNamesChoice = randChoice(femaleNamesArr);
+    nameChoice = femaleNamesChoice;
   }
 
-  const randomLastName = Math.floor(Math.random() * lastNamesArr); // null
+  const randomLastName = lastNamesArr[Math.floor(Math.random() * lastNamesArr)]; // null
   const randomAge = Math.floor(Math.random() * 78) + 18; // poprawnie
 
   const person = {
     gender: genderChoice,
+    firstName: nameChoice,
     lastName: randomLastName,
     age: randomAge,
   };
