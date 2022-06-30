@@ -57,7 +57,8 @@ for (let i = 0; i < 20; i++) {
     nameChoice = femaleNamesChoice;
   }
 
-  const randomLastName = lastNamesArr[Math.floor(Math.random() * lastNamesArr)]; // null
+  const randomLastName =
+    lastNamesArr[Math.floor(Math.random() * lastNamesArr.length)]; // null
   const randomAge = Math.floor(Math.random() * 78) + 18; // poprawnie
 
   const person = {
@@ -72,7 +73,7 @@ for (let i = 0; i < 20; i++) {
 
 const peopleFile = JSON.stringify(people);
 
-fs.writeFile('people.JSON', peopleFile, (err) => {
+fs.writeFile('people.json', peopleFile, (err) => {
   if (err) throw err;
   console.log('File has been successfully generated! Check people.json');
 });
